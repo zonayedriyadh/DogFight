@@ -71,6 +71,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Missiles.cs" />
     <Compile Include="Assets\Scripts\PlaneControll.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>H:/personal work/missiles/Dog Fight/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

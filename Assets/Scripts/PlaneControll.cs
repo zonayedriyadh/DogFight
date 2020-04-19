@@ -7,7 +7,7 @@ public class PlaneControll : MonoBehaviour
     #region Variable
     private Rigidbody rb;
     public Camera GameCamera;
-    private int speed = 15;
+    private int speed = 30;
     public VariableJoystick variableJoystick;
 
     private float currentAngle;
@@ -16,14 +16,16 @@ public class PlaneControll : MonoBehaviour
     private bool isMovingChanged = false;
     private int life = 0;
     private float TurnSpeed = 0.05f;
-    private int angleSpeed = 100;
+    private int angleSpeed = 150;
     #endregion
 
+    public static PlaneControll sharedInstance;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         InitializeVariable();
+        sharedInstance = this;
     }
 
     // Update is called once per frame
