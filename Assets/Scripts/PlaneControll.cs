@@ -24,8 +24,14 @@ public class PlaneControll : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        InitializeVariable();
         sharedInstance = this;
+        variableJoystick = JoystickPanel.sharedInstance.joystick;
+    }
+
+    public void setCamera(Camera gameCamera)
+    {
+        GameCamera = gameCamera;
+        InitializeVariable();
     }
 
     // Update is called once per frame
@@ -43,7 +49,7 @@ public class PlaneControll : MonoBehaviour
             Vector3 smoothAngle = Vector3.Lerp(transform.eulerAngles, desireAngle, TurnSpeed);
             transform.eulerAngles = smoothAngle;*/
 
-            Debug.Log("angle-> "+angle);
+            //Debug.Log("angle-> "+angle);
         }
 
     }
@@ -104,7 +110,7 @@ public class PlaneControll : MonoBehaviour
                 else if (currentAngle < -90)
                     currentAngle = 270;
 
-                Debug.Log("current angle--> "+currentAngle);
+                //Debug.Log("current angle--> "+currentAngle);
                 SetRotation(currentAngle);
             }
         }

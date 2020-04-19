@@ -112,7 +112,7 @@ public class Missiles : MonoBehaviour
                 else if (currentAngle < -90)
                     currentAngle = 270;
 
-                Debug.Log("current angle--> " + currentAngle);
+               // Debug.L("current angle--> " + currentAngle);
                 SetRotation(currentAngle);
             }
         }
@@ -140,5 +140,11 @@ public class Missiles : MonoBehaviour
     public float GetAngle()
     {
         return -Mathf.Atan2(Plane.gameObject.transform.position.z - this.gameObject.transform.position.z, Plane.gameObject.transform.position.x - this.gameObject.transform.position.x) * 180 / Mathf.PI +90;
+    }
+
+    public void SetTarget(GameObject target)
+    {
+        Plane = target;
+        variableJoystick = JoystickPanel.sharedInstance.joystick;
     }
 }
